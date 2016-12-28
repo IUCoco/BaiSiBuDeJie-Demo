@@ -1,0 +1,52 @@
+//
+//  BuDeJie.pch
+//  BuDeJie
+//
+//  Created by 陈志强 on 16/11/22.
+//  Copyright © 2016年 hdu. All rights reserved.
+//
+
+#import "CZQConst.h"
+
+#ifndef BuDeJie_pch
+#define BuDeJie_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/*
+ pch步骤:1.提前编译Pch
+ 
+ 1.存放公用宏
+ 2.存放公用头文件
+ 3.自定义Log
+ */
+#import "UIView+CZQFrame.h"
+#import "UIBarButtonItem+CZQItem.h"
+
+/*-----------------------屏幕适配---------------------------------- **/
+#define CZQScreenWith [UIScreen mainScreen].bounds.size.width
+#define CZQScreenHight [UIScreen mainScreen].bounds.size.height
+#define iPhone7P (CZQScreenHight == 736)
+#define iPhone6P (CZQScreenHight == 736)
+#define iPhone7 (CZQScreenHight == 667)
+#define iPhone6 (CZQScreenHight == 667)
+#define iPhone5 (CZQScreenHight == 568)
+#define iPodTouch (CZQScreenHight == 568)
+#define iPhone4s (CZQScreenHight == 480)
+/*-----------------------屏幕适配---------------------------------- **/
+
+
+
+#ifdef DEBUG//调试阶段
+
+#define CZQLog(...) NSLog(__VA_ARGS__)
+
+#else//发布阶段
+
+#define CZQLog(...)
+
+#endif
+
+
+#endif /* BuDeJie_pch */
